@@ -1,0 +1,25 @@
+%Das ist die Hauptdatei Hier startet der Compiler.
+%Das Dokument besteht immer aus Beginn und end. Davor ist Präampel und enthält Konfigurationen
+
+\documentclass[a4paper, 12pt]{article}
+
+\usepackage[ngerman]{babel} %Sprachpaket Deutsch
+\usepackage[T1]{fontenc} %Anpassung
+
+\title{LaTeX}
+\author{Ich}
+\date{\today}
+
+\begin{document}
+
+\maketitle
+\tableofcontents %Inhaltsverzeichnis, macht der automatisch
+
+\section{Dies ist ein Kapitel} %Kapitelabschnitt
+
+Ein bisschen Text.
+
+\include{Dok} %"Quelltext" aus anderer Datei an genau dieser Stelle eingefügt
+\include{Dok/Dok2} %Aus einem Unterordner
+
+\end{document}
