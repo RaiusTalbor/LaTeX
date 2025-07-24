@@ -1,0 +1,11 @@
+# Ignoriere alle .aux-Dateien (LaTeX Hilfsdateien)
+*.aux
+
+# Ignoriere alle .gz-Dateien (komprimierte Dateien)
+*.gz
+
+# Ignoriere alle .toc-Dateien (Inhaltsverzeichnis)
+*.toc
+
+# Ignoriere alle .log-Dateien (Log-Dateien)
+*.log

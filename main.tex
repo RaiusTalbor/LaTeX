@@ -10,7 +10,27 @@
 \author{Ich}
 \date{\today}
 
+%neue Befehle:
+\newcommand{\Befehlsname}[1][Standardwert]{<Definition>}
+%Standardanzahl der Parameter ist 0, nicht mehr als 9!
+%Standardwert/Standardwert, falls er nicht mitgegeben wird, ist optional
+%Definition, was halt passieren soll
+%in der Definition werden die Parameter mit #1, #2, #3, ... usw. angesprochen
+%überschreiben mit renewcommand
+
+%Beispiele
+\newcommand{\hallo}{Hallo Welt!}
+%Ouput: "Hallo Welt!"
+
+\newcommand{\gruss}[1]{Hallo, #1!}
+
+\newcommand{\email}[2][E-Mail-Adresse]{Kontakt: #1, Name: #2}
+%mit optionalen Parameter
+
 \begin{document}
+
+\gruss{Peter} %Output: "Hallo, Peter!"
+\email{Hans} %Output: "Email-Adresse Hans"; ich könnte auch ersten Paramter belegen
 
 \maketitle
 \tableofcontents %Inhaltsverzeichnis, macht der automatisch
