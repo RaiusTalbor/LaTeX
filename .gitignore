@@ -9,3 +9,5 @@
 
 # Ignoriere alle .log-Dateien (Log-Dateien)
 *.log
+*.bcf
+*run.xml

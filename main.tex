@@ -1,14 +1,32 @@
-%Das ist die Hauptdatei Hier startet der Compiler.
+%Das ist die Hauptdatei. Hier startet der Compiler.
 %Das Dokument besteht immer aus Beginn und end. Davor ist Präampel und enthält Konfigurationen
 
 \documentclass[a4paper, 12pt]{article}
 
 \usepackage[ngerman]{babel} %Sprachpaket Deutsch
 \usepackage[T1]{fontenc} %Anpassung
+\usepackage{pdfpages} %für PDFs einfügen
+\usepackage[backend=biber, style=authoryear]{biblatex} %für die bib-Datei
 
 \title{LaTeX}
 \author{Ich}
 \date{\today}
+
+
+\addbibresource{deineLiteratur.bib} %Einbinden der bib-Datei aus Zotero
+
+
+%globale Konstanten erstellen:
+\newcommand{\setmyyear}[1]{\newcommand{\myyear}{#1}}
+\setmyyear{2025}
+\myyear %Aufruf
+
+%wenn mehrmals nutzbar sein soll
+\newcommand{\myyear}{} % initiale Definition
+\newcommand{\setmyyear}[1]{\renewcommand{\myyear}{#1}}
+
+
+
 
 %neue Befehle:
 \newcommand{\Befehlsname}[1][Standardwert]{<Definition>}
@@ -27,6 +45,19 @@
 \newcommand{\email}[2][E-Mail-Adresse]{Kontakt: #1, Name: #2}
 %mit optionalen Parameter
 
+
+%flexiblere Befehle:
+\usepackage{xparse}
+\NewDocumentCommand{\befehl}{O{} m}{\ifblank{#1}{#1}{#2}}
+%O{Startwert} ... optional
+%m... Pflicht
+%in def Zugriff auf Args mit #1 etc.
+%letzte Klammer ist def, dort kann man "alles schreiben", auch Text
+%jeweiligen Parameter prüfen: \ifblank : 1:Welcher Parameter 2:Wenn wahr 3:Wenn falsch
+%bei Aufruf \befehl[]{} []...optional (kann auch weg, wenn kein Wert dahinter (1 kann weg, 2 nicht) [1]{Wert}[2][66]) {}...Pflicht
+
+
+
 \begin{document}
 
 \gruss{Peter} %Output: "Hallo, Peter!"
@@ -36,12 +67,27 @@
 \tableofcontents %Inhaltsverzeichnis, macht der automatisch
 
 \section{Dies ist ein Kapitel} %Kapitelabschnitt
+\subsection{Titel} %für Untersüberschrift (\subsubsection{Titel} usw.)
+\paragraph{Titel} %für Teilüberschriften (auch hier sub, subsub, etc.)
+%mit Stern werden sie nicht im Inhaltsverzeichnis aufgeführt \section*{}
 
 Ein bisschen Text.
+
+Für direkte Zitate, kann man die eingebaute Funktion Footcite \footcite[2]{psgithub} benutzen.
+Unter der LaTeX-Vorlage der DHSN sind ein paar komplexere Funktionen zu finden.
 
 \include{Dok} %"Quelltext" aus anderer Datei an genau dieser Stelle eingefügt auf neuer Seite
 \include{Dok/Dok2} %Aus einem Unterordner
 \input{Dok.tex} %ohne neuer Seite
 %besonders sinnvoll für configs
 
+\includepdf[pages=-]{anhang.pdf}
+%pages=- bedeutet alle Seiten einfügen
+%Bestimmte Seiten: pages=1-3 --> Seiten 1 bis 3
+%pages={1,3,5} --> Nur diese Seiten
+%Optional: pagecommand={} entfernt die Seitenzahlen
+%Pfad beachten!
+
 \end{document}
+
+\printbibliography %damit das Literaturverzeichnis geprintet wird.
