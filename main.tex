@@ -146,10 +146,22 @@ ohne Anstriche, aber mit label.
 %Liste in Liste möglich.
 
 \item[label] %Kann als Label alles (sehr vieles) annehmen, wird dann als Anstrich verwendet; 
+\item[a)] %nimmt a) als Anstrich
 
 %theoretisch noch weiter anpassbar: Mit Umrahmungen, passenden Spalten und so, 
 %mit Start Aufzählung an anderer Stelle, mit anderer Zählung usw
-%--> https://de.overleaf.com/learn/latex/Lists
+%--> https://de.overleaf.com/learn/latex/L
+
+
+%Bild einfügen ----------------------------------------------------------------------------------
+\begin{figure}
+    \centering
+    \includegraphics[width=1\linewidth]{OSI.jpg}
+    \caption{Bildunterschrift} %Das steht unten drunter
+    \label{fig:enter-label} %Schlüssel, um später darauf verweisen zu können
+    %fig: Abbildung, tab: Tabelle; sec: Überschift (Section, Subsection); eq: Gleichung
+\end{figure}
+
 
 \end{document}
 
