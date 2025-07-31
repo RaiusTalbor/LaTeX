@@ -153,6 +153,18 @@ ohne Anstriche, aber mit label.
 %--> https://de.overleaf.com/learn/latex/L
 
 
+%Verweise ---------------------------------------------------------------------------------------
+%usepackage{hyperref}
+\label(sec:Beispiel) %Schlüssel, um darauf referenzieren zu können, für alle nummerierten möglich
+%WICHTIG: muss sich unmittelbar danach (section) oder in dem Element (s. Bild) befinden!
+
+\ref{fig:enter-label} %gibt Nummer des Objektes zurück
+--> 1
+\autoref{fig:enter-label} %gibt NUmmer des Objektes zurück und schreibt den passenden Vorsatz zurück
+--> Abbildung 1
+\pageref{fig:enter-label} %gibt Seitennummer aus, auf dem Label steht
+
+
 %Bild einfügen ----------------------------------------------------------------------------------
 \begin{figure}
     \centering
