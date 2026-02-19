@@ -164,6 +164,21 @@ ohne Anstriche, aber mit label.
 %--> https://de.overleaf.com/learn/latex/Lists
 
 
+%Tabellen ---------------------------------------------------------------------------------------
+%https://de.overleaf.com/learn/latex/Tables
+
+\begin{table}[h] %h für Anordnung an Textstelle
+\centering %Mittig
+\begin{tabular}{l|l|l} %Querstriche für Zeichnen der Linien
+Hi & Hi & Hi \\ \hline %hline ist horizontale Linie
+Hi & Hi & Hi \\ \hline
+Hi & Hi & Hi \\ \hline
+Hi & Hi & Hi \\ \hline
+Hi & Hi & Hi \\ \hline
+\end{tabular}
+\caption{Hi} %Caption wie bei Bildern
+\end{table}
+
 %Verweise ---------------------------------------------------------------------------------------
 %usepackage{hyperref}
 \label(sec:Beispiel) %Schlüssel, um darauf referenzieren zu können, für alle nummerierten möglich
