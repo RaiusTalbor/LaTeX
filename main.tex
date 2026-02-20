@@ -169,7 +169,7 @@ ohne Anstriche, aber mit label.
 
 \begin{table}[h] %h für Anordnung an Textstelle
 \centering %Mittig
-\begin{tabular}{l|l|l} %Querstriche für Zeichnen der Linien
+\begin{tabular}{l|l|l} %Querstriche für Zeichnen der Linien; l feste breite, X variable Breite
 Hi & Hi & Hi \\ \hline %hline ist horizontale Linie
 Hi & Hi & Hi \\ \hline
 Hi & Hi & Hi \\ \hline
@@ -178,6 +178,8 @@ Hi & Hi & Hi \\ \hline
 \end{tabular}
 \caption{Hi} %Caption wie bei Bildern
 \end{table}
+
+%Ein bisschen weiterführender: \begin{tblr}{width=\textwidth, colspec={X|X|X}, hlines, vlines} mit \usepackage{tabulararray}
 
 %Verweise ---------------------------------------------------------------------------------------
 %usepackage{hyperref}
